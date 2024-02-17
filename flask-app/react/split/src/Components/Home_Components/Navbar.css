@@ -1,0 +1,10 @@
+@keyframes moveUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-text {
+  animation: moveUpDown 0.3s linear infinite;
+  display: inline-block;
+}

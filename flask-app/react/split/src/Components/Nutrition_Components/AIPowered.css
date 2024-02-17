@@ -1,0 +1,24 @@
+.ai-powered {
+  background-color: #5fb773; /* A fresh, modern light green color */
+  color: white;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-icon {
+  margin-right: 50px;
+}
+
+.ai-icon h1 {
+  font-size: 5em;
+  margin-bottom: 20px;
+}
+
+.description p {
+  font-size: 1.2em;
+  max-width: 800px; /* Ensures the text doesn't stretch too wide on large screens */
+  margin: auto;
+  margin-top: 30px;
+}

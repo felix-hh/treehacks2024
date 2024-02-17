@@ -1,0 +1,3 @@
+Steps:
+1) In terminal, run:
+    - export OPENAI_API_KEY=<insert secret key here>

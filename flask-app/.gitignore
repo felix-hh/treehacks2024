@@ -1,0 +1,32 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react/split/node_modules
+react/split/.pnp
+react/split/.pnp.js
+
+# testing
+react/split//coverage
+
+# production
+react/split//build
+
+# misc
+react/split/.DS_Store
+react/split/.env.local
+react/split/.env.development.local
+react/split/.env.test.local
+react/split/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+llama_index/openai_api_key.txt
+llama_index/nutrition/__pycache__
+
+google_api/credentials.json
+google_api/token.json
+
+llama_index/train_emails/credentials.json
+llama_index/train_emails/token.json
