@@ -71,7 +71,7 @@ const AboutPage = () => {
       <div className="flex w-full items-center">
         {/* map questions to component */}
         {paragraphs.map((paragraph, index) => (
-          <Question key={index} text={paragraph} onTextUpdate={(newValue) => (newValue, index, answers, setAnswers)} />
+          <Question key={index} text={paragraph} onTextUpdate={(newValue) => updateIdx(newValue, index, answers, setAnswers)} />
         ))}
         <Button type="submit" variant="contained" onClick={handleSubmit}>Submit</Button>
       </div>
