@@ -6,7 +6,12 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return 'Hello, World!'
+    if request.method == 'GET':
+        return 'Hello, World!'
+    if request.method == 'POST':
+        print('testing')
+        print(request.get_json())
+        return 'kp kp kp'
 
 @app.route('/funkp', methods=['POST'])
 def hello():
