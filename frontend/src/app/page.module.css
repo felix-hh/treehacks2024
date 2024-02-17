@@ -49,19 +49,32 @@
 }
 
 .title {
-  font-size: 90px;
+  font-size: 120px;
   font-family: serif;
   color: #2b593e;
   margin: 0; /* Removes default margin */
-  padding-top: 20px; /* Adjust as needed for spacing */
+  padding-top: 10px; /* Adjust as needed for spacing */
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 30px;
   font-family: serif;
   color: #2b593e;
   margin: 0; /* Removes default margin */
   /* padding-top: 20px; Adjust as needed for spacing */
+}
+
+/* Add to page.module.css */
+.AboutPage {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(-100%); /* Starts above */
+  opacity: 0; /* Starts invisible */
+}
+
+/* Animate in */
+.showNewComponent {
+  transform: translateY(0); /* Move into view */
+  opacity: 1; /* Fade in */
 }
 
 .grid {
