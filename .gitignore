@@ -31,4 +31,6 @@ google_api/token.json
 llama_index/train_emails/credentials.json
 llama_index/train_emails/token.json
 
+backend/__pycache__
+.DS_Store
 **/.DS_Store

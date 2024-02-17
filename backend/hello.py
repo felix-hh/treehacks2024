@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import tog
+import model 
 
 app = Flask(__name__)
 CORS(app)
@@ -16,12 +16,12 @@ def hello_world():
 
 @app.route('/initial_questions', methods=['GET'])
 def get_questions():
-  qs = tog.model_get_question()
+  qs = model.model_get_question()
   return jsonify(qs)
 
 @app.route('/answers', methods=['POST'])
 def post_answers():
   body = request.get_json()['submission']
-  newqs = tog.model_post_answer(body)
+  newqs = model.model_post_answer(body)
   return jsonify(newqs)
 
