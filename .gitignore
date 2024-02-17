@@ -1,38 +1,32 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
-.pnp
-.pnp.js
+react/split/node_modules
+react/split/.pnp
+react/split/.pnp.js
 
 # testing
-coverage
+react/split//coverage
 
-# next.js
-.next/
-out/
-build
+# production
+react/split//build
 
 # misc
-.DS_Store
-*.pem
+react/split/.DS_Store
+react/split/.env.local
+react/split/.env.development.local
+react/split/.env.test.local
+react/split/.env.production.local
 
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+llama_index/openai_api_key.txt
+llama_index/nutrition/__pycache__
 
-# turbo
-.turbo
+google_api/credentials.json
+google_api/token.json
 
-.env
-.vercel
-.vscode
-.env*.local
+llama_index/train_emails/credentials.json
+llama_index/train_emails/token.json

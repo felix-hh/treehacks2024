@@ -1,7 +1,0 @@
-html2text
-llama_index
-langchain
-
-logging
-sys
-os
