@@ -30,16 +30,15 @@ const AboutPage = () => {
   // initialize as array of length 10 empty strings
   const [answers, setAnswers] = useState(Array(10).fill('')); // State for the list of paragraphs
 
+  const fetchData = async () => {
+    const questions = await axios.get('http://localhost:5000/questions')
+    console.log(questions)
+    setParagraphs(questions.data);
+    return
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const questions = await axios.get('http://localhost:5000/questions')
-      console.log(questions)
-      setParagraphs(questions.data);
-      return
-    }
     fetchData()
-
   }, [])
 
 
@@ -65,11 +64,13 @@ const AboutPage = () => {
 
 
     e.preventDefault();
-    if (inputValue.trim()) {
-      // setParagraphs([...paragraphs, inputValue]);
-      setInputValue(''); // Clear the input after submission
-    }
+    // if (inputValue.trim()) {
+    //   // setParagraphs([...paragraphs, inputValue]);
+    // }
     console.log(answers)
+    setAnswers(Array(10).fill('')); // Clear the input after submission
+    fetchData()
+
   };
 
 
@@ -78,7 +79,7 @@ const AboutPage = () => {
       <div className="flex w-full items-center">
         {/* map questions to component */}
         {paragraphs.map((paragraph, index) => (
-          <Question key={index} text={paragraph} onTextUpdate={(newValue) => updateIdx(newValue, index, answers, setAnswers)} />
+          <Question key={index} text={paragraph} onTextUpdate={(newValue) => (newValue, index, answers, setAnswers)} />
         ))}
         <Button type="submit" variant="contained" onClick={handleSubmit}>Submit</Button>
       </div>
