@@ -13,7 +13,7 @@ def hello_world():
         print(request.get_json())
         return 'kp kp kp'
 
-@app.route('/questions', methods=['GET'])
+@app.route('/initial_questions', methods=['GET'])
 def get_questions():
   qs = model.model_get_question()
   return jsonify(qs)
@@ -22,6 +22,6 @@ def get_questions():
 @app.route('/answers', methods=['POST'])
 def post_answers():
   body = request.get_json()['submission']
-  model.model_post_answer(body)
-  return jsonify('dabz very cool')
+  newqs = model.model_post_answer(body)
+  return jsonify(newqs)
 

@@ -1,4 +1,6 @@
 import random
+import datetime
+import time
 
 def model_get_question():
   questions = [
@@ -18,7 +20,11 @@ def model_get_question():
     "Find the mistake in the following sentence 'I dye my hair blue yesterday'"
   ]
   random.shuffle(questions)
-  return questions[:3]
+  print(f'[TIME][{datetime.datetime.now()}] Returning new set of quesitons')
+  return questions[:10]
 
 def model_post_answer(answer):
-  print(f'Registering submission: {answer}')
+  print(f'[TIME][{datetime.datetime.now()}] Registering submission: {answer}')
+  time.sleep(10)
+  return model_get_question()
+

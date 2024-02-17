@@ -30,14 +30,13 @@ const AboutPage = () => {
   // initialize as array of length 10 empty strings
   const [answers, setAnswers] = useState(Array(10).fill('')); // State for the list of paragraphs
 
-  const fetchData = async () => {
-    const questions = await axios.get('http://localhost:5000/questions')
-    console.log(questions)
-    setParagraphs(questions.data);
-    return
-  }
-
   useEffect(() => {
+    const fetchData = async () => {
+      const questions = await axios.get('http://localhost:5000/initial_questions')
+      console.log(questions)
+      setParagraphs(questions.data);
+      return
+    };
     fetchData()
   }, [])
 
@@ -49,14 +48,14 @@ const AboutPage = () => {
 
   // Handler for form submission
   const handleSubmit = (e) => {
+    console.log(answers)
     try {
       const data = axios.post('http://localhost:5000/answers', {
         'submission': answers
       })
         .then(res => {
           console.log("success")
-          console.log(res.data)
-          // setParagraphs([...paragraphs, "response " + res.data])
+          setParagraphs(res.data)
         })
     } catch (err) {
       console.log(err)
@@ -64,13 +63,6 @@ const AboutPage = () => {
 
 
     e.preventDefault();
-    // if (inputValue.trim()) {
-    //   // setParagraphs([...paragraphs, inputValue]);
-    // }
-    console.log(answers)
-    setAnswers(Array(10).fill('')); // Clear the input after submission
-    fetchData()
-
   };
 
 
