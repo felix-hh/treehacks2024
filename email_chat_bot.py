@@ -43,7 +43,6 @@ def email_generate():
     response = jsonify(chat_engine.chat(prompt).response)
     return response
 
-
 @app.route('/emailsend', methods=['POST'])
 def email_send():
     try:
