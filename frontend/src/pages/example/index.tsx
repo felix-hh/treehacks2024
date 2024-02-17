@@ -10,10 +10,15 @@ const AboutPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get('http://localhost:5000/')
-      console.log(data)
-      setParagraphs([data.data]);
-      return 
+      try {
+        const data = await axios.get('http://localhost:5000/')
+        console.log(data)
+        setParagraphs([data.data]);
+      } catch (err) {
+        console.log(err)
+      }
+
+      return
     }
     fetchData()
 
@@ -27,6 +32,21 @@ const AboutPage = () => {
 
   // Handler for form submission
   const handleSubmit = (e) => {
+    try {
+      const data = axios.post('http://localhost:5000/funkp', {
+        'submission': inputValue
+      })
+        .then(res => {
+          console.log("success")
+          console.log(res)
+          console.log(res.data)
+          setParagraphs([...paragraphs, "response " + res.data])
+        })
+    } catch (err) {
+      console.log(err)
+    }
+
+
     e.preventDefault();
     if (inputValue.trim()) {
       setParagraphs([...paragraphs, inputValue]);
