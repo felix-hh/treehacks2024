@@ -30,3 +30,5 @@ google_api/token.json
 
 llama_index/train_emails/credentials.json
 llama_index/train_emails/token.json
+
+**/.DS_Store
