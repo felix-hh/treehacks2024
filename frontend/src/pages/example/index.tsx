@@ -53,7 +53,7 @@ const AboutPage = () => {
   const handleSubmit = (e) => {
     try {
       const data = axios.post('http://localhost:5000/funkp', {
-        'submission': inputValue
+        'submission': answers
       })
         .then(res => {
           console.log("success")
@@ -61,7 +61,7 @@ const AboutPage = () => {
           console.log(res.data)
           setParagraphs([...paragraphs, "response " + res.data])
         })
-    } catch (err) {
+    } catch (err) { 
       console.log(err)
     }
 
