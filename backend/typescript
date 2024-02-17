@@ -1,0 +1,11 @@
+Script started on Sat Feb 17 00:17:01 2024
+expor[1m[7m%[27m[1m[0m                                                                                                                                                 [0m[27m[24m[Jfelixh@Felixs-MacBook-Pro-2 backend % [K[?2004heexport FLASK_APP='hello.py'[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                 [0m[27m[24m[Jfelixh@Felixs-MacBook-Pro-2 backend % [K[?2004hr fflask run[?2004l
+ * Serving Flask app 'hello.py'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+^C[1m[7m%[27m[1m[0m                                                                                                                                                 [0m[27m[24m[Jfelixh@Felixs-MacBook-Pro-2 backend % [K[?2004heexit[?2004l
+
+Script done on Sat Feb 17 00:17:20 2024
